@@ -1,11 +1,11 @@
-const { verifyTokenAndAuth, verifyTokenAndAdmin } = require("./verifyToken");
+const { verifyTokenAndAuth, verifyTokenAndAdmin, verifyToken } = require("./verifyToken");
 
 const Product = require("../models/Product");
 const router = require("express").Router();
 const CryptoJS = require("crypto-js");
 
 //CREATE
-router.post("/",verifyTokenAndAdmin,async(req,res)=>{
+router.post("/",verifyToken,async(req,res)=>{
     const newP=new Product(req.body)
 
     try{

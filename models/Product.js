@@ -5,29 +5,33 @@ const ProductSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
     },
     desc: {
       type: String,
       required: true,
-      unique: true,
     },
     img: {
       type: String,
       required: true,
     },
-    categories: {
-      type: Array,
-    },
-    size: {
-      type: String,
-    },
-    color: {
+    category: {
       type: String,
     },
     price: {
       type: Number,
       required: true,
+    },
+    sellersId: {
+      type: String,
+      required: true,
+    },
+    bargain: {
+      type: Boolean,
+      default: false,
+    },
+    sold: {
+      type: Boolean,
+      default: false,
     },
   },
   {
